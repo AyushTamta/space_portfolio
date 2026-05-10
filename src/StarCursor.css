@@ -1,0 +1,181 @@
+/* StarCursor.css */
+
+/* ========================================= */
+/* HIDE DEFAULT CURSOR */
+/* ========================================= */
+
+html,
+body,
+*,
+a,
+button,
+input,
+textarea,
+select{
+
+cursor:none !important;
+
+}
+
+/* ========================================= */
+/* ROCKET CURSOR */
+/* ========================================= */
+
+.rocket-cursor{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:38px;
+height:38px;
+
+/* IMAGE PATH */
+
+background:
+url("./components/rocket-cursor.png")
+center/contain no-repeat;
+
+background-size:contain;
+
+pointer-events:none;
+
+z-index:9999999;
+
+/* SLIGHTLY ANGLED */
+
+transform:
+translate(-50%,-50%)
+rotate(-8deg);
+
+will-change:transform;
+
+/* GLOW */
+
+filter:
+drop-shadow(0 0 8px rgba(0,255,255,.8))
+drop-shadow(0 0 18px rgba(0,255,255,.35));
+
+animation:
+rocketFloat 2s ease-in-out infinite;
+
+}
+
+/* ========================================= */
+/* FLOAT */
+/* ========================================= */
+
+@keyframes rocketFloat{
+
+0%{
+
+transform:
+translate(-50%,-50%)
+rotate(-8deg)
+translateY(0px);
+
+}
+
+50%{
+
+transform:
+translate(-50%,-50%)
+rotate(-8deg)
+translateY(-2px);
+
+}
+
+100%{
+
+transform:
+translate(-50%,-50%)
+rotate(-8deg)
+translateY(0px);
+
+}
+
+}
+
+/* ========================================= */
+/* ROCKET TRAIL */
+/* ========================================= */
+
+.rocket-trail{
+
+position:fixed;
+
+width:5px;
+height:5px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+z-index:9999998;
+
+background:white;
+
+box-shadow:
+0 0 6px white,
+0 0 12px #00ffff,
+0 0 20px #00ffff;
+
+animation:
+trailFade .5s linear forwards;
+
+transform:
+translate(-50%,-50%);
+
+}
+
+/* ========================================= */
+/* TRAIL FADE */
+/* ========================================= */
+
+@keyframes trailFade{
+
+0%{
+
+opacity:1;
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translate(-50%,-50%)
+scale(0);
+
+}
+
+}
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+
+@media(max-width:768px){
+
+html,
+body,
+*{
+
+cursor:auto !important;
+
+}
+
+.rocket-cursor,
+.rocket-trail{
+
+display:none;
+
+}
+
+}

@@ -1,0 +1,319 @@
+.about {
+
+    min-height:650px;
+    padding:190px 60px 80px 60px;
+    position:relative;
+    overflow:hidden;
+    background:transparent;
+    color:white;
+    
+    }
+    /* Milky Way Background */
+    
+    .about::before{
+    content:"";
+    position:absolute;
+    width:120%;
+    height:120%;
+    top:-10%;
+    left:-10%;
+    background:url("./gal_1.avif") center/cover no-repeat;
+   
+    animation:galaxyMove 70s ease-in-out infinite alternate;
+    z-index:0;
+    }
+    
+    @keyframes galaxyMove{
+    0%{
+    transform:scale(1) translateY(0px);
+    }
+    100%{
+    transform:scale(1.08) translateY(-30px);
+    }
+    }
+    
+    /* Twinkling Stars */
+    
+    .stars,
+    .stars2,
+    .stars3{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+    pointer-events:none;
+    }
+    
+    .stars{
+    box-shadow:
+    100px 200px white,
+    300px 400px white,
+    500px 600px white,
+    700px 200px white,
+    900px 300px white,
+    1200px 500px white,
+    1500px 200px white,
+    1800px 400px white,
+    200px 800px white,
+    600px 900px white,
+    800px 100px white,
+    1100px 300px white,
+    1400px 700px white,
+    1700px 600px white,
+    1900px 200px white;
+    animation:twinkle 5s infinite;
+    }
+    
+    .stars2{
+    box-shadow:
+    200px 300px white,
+    400px 600px white,
+    600px 100px white,
+    800px 400px white,
+    1000px 700px white,
+    1200px 200px white,
+    1400px 500px white,
+    1600px 300px white;
+    animation:twinkle 7s infinite;
+    }
+    
+    .stars3{
+    box-shadow:
+    300px 200px white,
+    600px 500px white,
+    900px 400px white,
+    1200px 300px white,
+    1500px 600px white;
+    animation:twinkle 9s infinite;
+    }
+    
+    @keyframes twinkle{
+    0%{opacity:.3}
+    50%{opacity:1}
+    100%{opacity:.3}
+    }
+    
+    /* Floating particles */
+    
+    .particles{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:1;
+    }
+    
+    .particles span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    animation:float 20s linear infinite;
+    opacity:.5;
+    }
+    
+    @keyframes float{
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-1000px);}
+    }
+    
+    /* Layout */
+    
+    .about-container{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:70px;
+    }
+    
+    /* Floating Profile */
+    
+    .profile-photo-container{
+    animation:floatProfile 6s ease-in-out infinite;
+    }
+    
+    @keyframes floatProfile{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0px);}
+    }
+    
+    /* Profile Wrapper */
+    
+    .photo-wrapper{
+    width:300px;
+    height:300px;
+    position:relative;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    }
+    
+    /* Glow Ring Behind */
+    
+    .photo-wrapper::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    
+    background:radial-gradient(
+    circle,
+    rgba(0,255,255,0.15),
+    transparent 70%
+    );
+    
+    z-index:0;
+    transition:.4s ease;
+    }
+    
+    /* Hover Glow */
+    
+    .photo-wrapper:hover::before{
+    background:radial-gradient(
+    circle,
+    rgba(0,255,255,0.35),
+    transparent 70%
+    );
+    
+    filter:blur(6px);
+    }
+    
+    /* Profile Image */
+    
+    .profile-photo{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    object-fit:cover;
+    position:relative;
+    z-index:2;
+    
+    border:3px solid rgba(255,255,255,0.4);
+    
+    transition:.4s ease;
+    }
+    
+    /* Profile Hover */
+    
+    .photo-wrapper:hover .profile-photo{
+    
+    box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px rgba(0,255,255,.4);
+    
+    transform:scale(1.03);
+    }
+    
+    /* About Glass Card */
+    
+    .about-text{
+    max-width:600px;
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.4s ease;
+    position:relative;
+    
+    }
+    
+    /* About Glow */
+    
+    .about-text:hover{
+    
+    background:rgba(255,255,255,.08);
+    
+    box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px #00ffff,
+    0 0 80px rgba(0,255,255,.4),
+    0 0 120px rgba(0,255,255,.2);
+    
+    border:1px solid #00ffff;
+    
+    transform:translateY(-8px);
+    
+    }
+    
+    /* Sweep Animation */
+    
+    .about-text::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,255,255,.3),
+    transparent
+    );
+    transition:.6s;
+    border-radius:20px;
+    }
+    
+    .about-text:hover::before{
+    left:100%;
+    
+    }
+    
+    .about-text h2{
+    font-size:2.5rem;
+    margin-bottom:10px;
+    }
+    
+    .about-text h3{
+    color:#00ffff;
+    margin-bottom:15px;
+    }
+    
+    .about-text p{
+    line-height:1.8;
+    color:#d5e6ff;
+    }
+    
+    /* Sparkle */
+    
+    .sparkle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    animation:sparkleAnimation .6s forwards;
+    box-shadow:
+    0 0 8px white,
+    0 0 12px cyan;
+    }
+    
+    @keyframes sparkleAnimation{
+    0%{opacity:1;}
+    100%{
+    transform:scale(2);
+    opacity:0;
+    }
+    }
+    
+    /* Responsive */
+    
+    @media(max-width:768px){
+    
+    .about-container{
+    flex-direction:column;
+    text-align:center;
+    }
+    
+    .about-text{
+    margin-top:30px;
+    }
+    
+    }

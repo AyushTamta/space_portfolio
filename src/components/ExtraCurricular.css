@@ -1,0 +1,506 @@
+/* ========================================= */
+/* EXTRA CURRICULAR */
+/* ========================================= */
+
+.extra-curricular{
+
+width:100%;
+
+min-height:100vh;
+
+padding:100px 20px;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+color:white;
+
+box-sizing:border-box;
+
+}
+
+/* ========================================= */
+/* GALAXY BACKGROUND */
+/* ========================================= */
+
+.extra-curricular::before{
+
+content:"";
+
+position:absolute;
+
+top:-10%;
+left:-10%;
+
+width:120%;
+height:120%;
+
+background:url("./gal_1.avif") center/cover no-repeat;
+
+animation:galaxyMove 80s ease-in-out infinite alternate;
+
+z-index:0;
+
+}
+
+@keyframes galaxyMove{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.05);
+}
+
+}
+
+/* ========================================= */
+/* DEPTH */
+/* ========================================= */
+
+.extra-depth{
+position:absolute;
+width:100%;
+height:100%;
+z-index:1;
+}
+
+/* GLOW */
+
+.interstellar span{
+
+position:absolute;
+
+width:280px;
+height:280px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(0,255,255,.12),
+transparent 70%
+);
+
+filter:blur(45px);
+
+animation:nebulaFloat 40s infinite ease-in-out;
+
+}
+
+.interstellar span:nth-child(1){top:10%;left:15%;}
+.interstellar span:nth-child(2){top:70%;left:80%;}
+.interstellar span:nth-child(3){top:30%;left:60%;}
+.interstellar span:nth-child(4){top:80%;left:25%;}
+.interstellar span:nth-child(5){top:45%;left:45%;}
+.interstellar span:nth-child(6){top:15%;left:85%;}
+.interstellar span:nth-child(7){top:75%;left:55%;}
+.interstellar span:nth-child(8){top:40%;left:10%;}
+
+@keyframes nebulaFloat{
+
+0%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0)}
+
+}
+
+/* STARS */
+
+.extra-stars span{
+
+position:absolute;
+
+width:2px;
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 4s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%{opacity:.2}
+50%{opacity:1}
+100%{opacity:.2}
+
+}
+
+/* ========================================= */
+/* TITLE */
+/* ========================================= */
+
+.extra-title{
+
+position:relative;
+z-index:3;
+
+font-size:3rem;
+
+margin-bottom:70px;
+
+text-align:center;
+
+text-shadow:
+0 0 10px rgba(0,255,255,.5),
+0 0 30px rgba(0,255,255,.25);
+
+}
+
+/* ========================================= */
+/* CONTAINER */
+/* ========================================= */
+
+.carousel-section-container{
+
+position:relative;
+z-index:3;
+
+width:100%;
+max-width:1400px;
+
+display:flex;
+justify-content:center;
+align-items:flex-start;
+
+gap:25px;
+
+margin:0 auto;
+
+box-sizing:border-box;
+
+overflow:hidden;
+
+}
+
+/* ========================================= */
+/* PANELS */
+/* ========================================= */
+
+.carousel-section{
+
+width:50%;
+
+max-width:680px;
+
+padding:20px;
+
+border-radius:28px;
+
+/* TRANSPARENT */
+
+background:transparent;
+
+backdrop-filter:none;
+
+box-shadow:none;
+
+transition:.5s ease;
+
+overflow:hidden;
+
+box-sizing:border-box;
+
+}
+
+/* OPTIONAL LIGHT GLOW */
+
+.carousel-section:hover{
+
+box-shadow:
+0 0 25px rgba(0,255,255,.08);
+
+}
+
+/* HEADINGS */
+
+.carousel-section h3{
+
+text-align:center;
+
+margin-bottom:30px;
+
+font-size:2rem;
+
+text-shadow:
+0 0 10px rgba(0,255,255,.4);
+
+}
+
+/* ========================================= */
+/* SLICK */
+/* ========================================= */
+
+.slick-slider{
+width:100%;
+overflow:hidden;
+}
+
+.slick-list{
+overflow:hidden !important;
+}
+
+.slick-track{
+display:flex;
+align-items:center;
+}
+
+/* ========================================= */
+/* SLIDES */
+/* ========================================= */
+
+.slide-container{
+
+padding:8px;
+
+display:flex !important;
+justify-content:center;
+align-items:center;
+
+box-sizing:border-box;
+
+}
+
+/* ========================================= */
+/* IMAGES */
+/* ========================================= */
+
+.carousel-image{
+
+width:100%;
+
+max-width:240px;
+
+height:340px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+cursor:pointer;
+
+transition:.5s ease;
+
+opacity:.4;
+
+transform:scale(.82);
+
+}
+
+/* CENTER IMAGE */
+
+.slick-center .carousel-image{
+
+opacity:1;
+
+transform:scale(1);
+
+box-shadow:
+0 0 25px rgba(0,255,255,.15);
+
+}
+
+/* HOVER */
+
+.slick-center .carousel-image:hover{
+
+transform:scale(1.03);
+
+box-shadow:
+0 0 40px rgba(0,255,255,.25);
+
+}
+
+/* ========================================= */
+/* ARROWS */
+/* ========================================= */
+
+.slick-prev,
+.slick-next{
+
+z-index:100;
+
+width:50px;
+height:50px;
+
+border-radius:50%;
+
+background:rgba(0,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+transition:.4s ease;
+
+}
+
+.slick-prev:hover,
+.slick-next:hover{
+
+background:rgba(0,255,255,.25);
+
+transform:scale(1.1);
+
+}
+
+.slick-prev:before,
+.slick-next:before{
+
+font-size:24px;
+color:white;
+
+}
+
+/* ========================================= */
+/* DOTS */
+/* ========================================= */
+
+.slick-dots li button:before{
+
+color:#00ffff;
+opacity:.5;
+font-size:12px;
+
+}
+
+.slick-dots li.slick-active button:before{
+
+color:white;
+opacity:1;
+
+}
+
+/* ========================================= */
+/* IMAGE MODAL */
+/* ========================================= */
+
+.image-modal{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(12px);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+animation:fadeIn .4s ease;
+
+}
+
+/* CONTAINER */
+
+.modal-container{
+
+max-width:90vw;
+max-height:90vh;
+
+padding:20px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 40px rgba(0,255,255,.25),
+0 0 120px rgba(0,255,255,.1);
+
+}
+
+/* IMAGE */
+
+.modal-image{
+
+max-width:100%;
+max-height:80vh;
+
+object-fit:contain;
+
+border-radius:20px;
+
+display:block;
+
+}
+
+/* FADE */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media(max-width:1100px){
+
+.carousel-section-container{
+
+flex-direction:column;
+align-items:center;
+
+gap:40px;
+
+}
+
+.carousel-section{
+
+width:100%;
+max-width:700px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.extra-curricular{
+
+padding:80px 10px;
+
+}
+
+.extra-title{
+
+font-size:2.1rem;
+
+}
+
+.carousel-image{
+
+max-width:220px;
+height:300px;
+
+}
+
+}
