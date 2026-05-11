@@ -104,7 +104,7 @@ animationDelay:Math.random()*5+"s"
 <FontAwesomeIcon icon={faDatabase} className="skill-icon"/>
 <div className="skill-name">SQL</div>
 </div>
-
+x
 </div>
 
 );

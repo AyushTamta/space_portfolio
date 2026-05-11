@@ -71,6 +71,8 @@ height:100%;
 
 z-index:1;
 
+pointer-events:none;
+
 }
 
 /* ========================================= */
@@ -152,6 +154,92 @@ animation:twinkle 4s infinite;
 }
 
 /* ========================================= */
+/* SATELLITES */
+/* ========================================= */
+
+.satellite{
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.35;
+
+filter:blur(1px);
+
+z-index:1;
+
+}
+
+.sat1{
+
+top:18%;
+left:-5%;
+
+animation:satelliteMove1 40s linear infinite;
+
+}
+
+.sat2{
+
+top:55%;
+left:-10%;
+
+animation:satelliteMove2 55s linear infinite;
+
+}
+
+.sat3{
+
+top:75%;
+left:-8%;
+
+animation:satelliteMove3 65s linear infinite;
+
+}
+
+@keyframes satelliteMove1{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(120vw);
+}
+
+}
+
+@keyframes satelliteMove2{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(130vw);
+}
+
+}
+
+@keyframes satelliteMove3{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(140vw);
+}
+
+}
+
+/* ========================================= */
 /* TITLE */
 /* ========================================= */
 
@@ -215,6 +303,44 @@ transition:.5s ease;
 }
 
 /* ========================================= */
+/* SPOTLIGHT */
+/* ========================================= */
+
+.spotlight{
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,255,255,.18),
+transparent 70%
+);
+
+border-radius:50%;
+
+filter:blur(25px);
+
+opacity:0;
+
+transition:.5s ease;
+
+z-index:-1;
+
+}
+
+.astronaut-card:hover .spotlight{
+
+opacity:1;
+
+transform:scale(1.2);
+
+}
+
+/* ========================================= */
 /* ASTRONAUT IMAGE */
 /* ========================================= */
 
@@ -233,9 +359,26 @@ position:relative;
 
 z-index:2;
 
+animation:
+astronautBreath 4s ease-in-out infinite;
+
 }
 
-/* HOVER */
+@keyframes astronautBreath{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.03);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
 
 .astronaut-card:hover img{
 
@@ -355,141 +498,56 @@ orbitFive 19s ease-in-out infinite;
 
 @keyframes orbitOne{
 
-0%{
-transform:translate(0,0) rotate(0deg);
-}
-
-20%{
-transform:translate(55px,-30px) rotate(4deg);
-}
-
-40%{
-transform:translate(110px,10px) rotate(-3deg);
-}
-
-60%{
-transform:translate(70px,45px) rotate(3deg);
-}
-
-80%{
-transform:translate(20px,25px) rotate(-2deg);
-}
-
-100%{
-transform:translate(0,0) rotate(0deg);
-}
+0%{transform:translate(0,0) rotate(0deg);}
+20%{transform:translate(55px,-30px) rotate(4deg);}
+40%{transform:translate(110px,10px) rotate(-3deg);}
+60%{transform:translate(70px,45px) rotate(3deg);}
+80%{transform:translate(20px,25px) rotate(-2deg);}
+100%{transform:translate(0,0) rotate(0deg);}
 
 }
 
 @keyframes orbitTwo{
 
-0%{
-transform:translate(0,0) rotate(0deg);
-}
-
-20%{
-transform:translate(-60px,35px) rotate(-4deg);
-}
-
-40%{
-transform:translate(-120px,-10px) rotate(3deg);
-}
-
-60%{
-transform:translate(-75px,-50px) rotate(-3deg);
-}
-
-80%{
-transform:translate(-25px,-25px) rotate(2deg);
-}
-
-100%{
-transform:translate(0,0) rotate(0deg);
-}
+0%{transform:translate(0,0) rotate(0deg);}
+20%{transform:translate(-60px,35px) rotate(-4deg);}
+40%{transform:translate(-120px,-10px) rotate(3deg);}
+60%{transform:translate(-75px,-50px) rotate(-3deg);}
+80%{transform:translate(-25px,-25px) rotate(2deg);}
+100%{transform:translate(0,0) rotate(0deg);}
 
 }
 
 @keyframes orbitThree{
 
-0%{
-transform:translate(0,0) rotate(0deg);
-}
-
-20%{
-transform:translate(65px,-45px) rotate(4deg);
-}
-
-40%{
-transform:translate(130px,-10px) rotate(-3deg);
-}
-
-60%{
-transform:translate(80px,50px) rotate(3deg);
-}
-
-80%{
-transform:translate(25px,20px) rotate(-2deg);
-}
-
-100%{
-transform:translate(0,0) rotate(0deg);
-}
+0%{transform:translate(0,0) rotate(0deg);}
+20%{transform:translate(65px,-45px) rotate(4deg);}
+40%{transform:translate(130px,-10px) rotate(-3deg);}
+60%{transform:translate(80px,50px) rotate(3deg);}
+80%{transform:translate(25px,20px) rotate(-2deg);}
+100%{transform:translate(0,0) rotate(0deg);}
 
 }
 
 @keyframes orbitFour{
 
-0%{
-transform:translate(0,0) rotate(0deg);
-}
-
-20%{
-transform:translate(-75px,-40px) rotate(4deg);
-}
-
-40%{
-transform:translate(-135px,15px) rotate(-4deg);
-}
-
-60%{
-transform:translate(-85px,55px) rotate(3deg);
-}
-
-80%{
-transform:translate(-25px,20px) rotate(-2deg);
-}
-
-100%{
-transform:translate(0,0) rotate(0deg);
-}
+0%{transform:translate(0,0) rotate(0deg);}
+20%{transform:translate(-75px,-40px) rotate(4deg);}
+40%{transform:translate(-135px,15px) rotate(-4deg);}
+60%{transform:translate(-85px,55px) rotate(3deg);}
+80%{transform:translate(-25px,20px) rotate(-2deg);}
+100%{transform:translate(0,0) rotate(0deg);}
 
 }
 
 @keyframes orbitFive{
 
-0%{
-transform:translate(0,0) rotate(0deg);
-}
-
-20%{
-transform:translate(70px,-35px) rotate(-4deg);
-}
-
-40%{
-transform:translate(130px,10px) rotate(3deg);
-}
-
-60%{
-transform:translate(85px,50px) rotate(-3deg);
-}
-
-80%{
-transform:translate(25px,20px) rotate(2deg);
-}
-
-100%{
-transform:translate(0,0) rotate(0deg);
-}
+0%{transform:translate(0,0) rotate(0deg);}
+20%{transform:translate(70px,-35px) rotate(-4deg);}
+40%{transform:translate(130px,10px) rotate(3deg);}
+60%{transform:translate(85px,50px) rotate(-3deg);}
+80%{transform:translate(25px,20px) rotate(2deg);}
+100%{transform:translate(0,0) rotate(0deg);}
 
 }
 
@@ -514,40 +572,219 @@ pointer-events:none;
 
 }
 
+/* CARD */
+
 .space-card{
 
-width:420px;
+width:430px;
+
+position:relative;
+
+overflow:hidden;
 
 background:
-rgba(255,255,255,.06);
+rgba(10,14,25,.82);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(22px);
 
 border:
 1px solid rgba(255,255,255,.08);
 
 border-radius:28px;
 
-overflow:hidden;
-
 box-shadow:
-0 0 35px rgba(0,255,255,.12);
+0 0 35px rgba(0,255,255,.12),
+0 0 80px rgba(0,0,0,.45);
 
 pointer-events:auto;
 
+animation:
+cardReveal .45s cubic-bezier(.22,1,.36,1);
+
 }
 
-/* TITLE */
+/* CLEANER GLOW */
+
+.space-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-30%;
+left:-30%;
+
+width:160%;
+height:160%;
+
+background:
+radial-gradient(
+circle,
+rgba(0,255,255,.05),
+transparent 65%
+);
+
+animation:
+cardGlow 12s linear infinite;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+@keyframes cardGlow{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* ========================================= */
+/* SCAN LINES */
+/* ========================================= */
+
+.scan-lines{
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+transparent 50%,
+rgba(255,255,255,.015) 51%
+);
+
+background-size:
+100% 5px;
+
+pointer-events:none;
+
+opacity:.18;
+
+z-index:1;
+
+}
+
+/* ========================================= */
+/* CONTENT ABOVE GLOW */
+/* ========================================= */
+
+.mission-header,
+.space-card h3,
+.sector,
+.project-image,
+.typing-text,
+.tech-stack,
+.project-links{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
+
+.mission-header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:22px 24px 12px;
+
+}
+
+.mission-header h5{
+
+font-size:.8rem;
+
+letter-spacing:2px;
+
+font-weight:700;
+
+color:#57e8ff;
+
+text-transform:uppercase;
+
+}
+
+/* STATUS */
+
+.mission-status{
+
+padding:6px 12px;
+
+border-radius:30px;
+
+background:
+rgba(0,255,255,.10);
+
+border:
+1px solid rgba(0,255,255,.18);
+
+font-size:.72rem;
+
+font-weight:700;
+
+color:#dffcff;
+
+letter-spacing:.5px;
+
+}
+
+/* ========================================= */
+/* CARD TITLE */
+/* ========================================= */
 
 .space-card h3{
 
-font-size:1.7rem;
+font-size:1.8rem;
 
-padding:24px 24px 12px;
+padding:0 24px 12px;
+
+font-weight:700;
+
+color:white;
+
+letter-spacing:.5px;
+
+line-height:1.2;
 
 }
 
+/* ========================================= */
+/* SECTOR */
+/* ========================================= */
+
+.sector{
+
+padding:0 24px 18px;
+
+font-size:.82rem;
+
+letter-spacing:1.2px;
+
+font-weight:600;
+
+color:#8ee8ff;
+
+text-transform:uppercase;
+
+}
+
+/* ========================================= */
 /* IMAGE */
+/* ========================================= */
 
 .project-image{
 
@@ -556,23 +793,89 @@ height:230px;
 
 object-fit:cover;
 
+border-top:
+1px solid rgba(255,255,255,.05);
+
+border-bottom:
+1px solid rgba(255,255,255,.05);
+
 }
 
+/* ========================================= */
 /* DESCRIPTION */
+/* ========================================= */
 
-.space-card p{
+.typing-text{
+
+padding:22px 24px;
+
+line-height:1.8;
+
+font-size:.96rem;
+
+font-weight:400;
+
+color:#f1f5ff;
+
+opacity:.92;
+
+letter-spacing:.2px;
+
+animation:
+fadeTyping .8s ease;
+
+}
+
+/* ========================================= */
+/* TECH STACK */
+/* ========================================= */
+
+.tech-stack{
+
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 
 padding:0 24px 24px;
 
-line-height:1.7;
+}
 
-font-size:.95rem;
+.tech-stack span{
 
-color:#d6d6d6;
+padding:8px 14px;
+
+border-radius:30px;
+
+background:
+rgba(0,255,255,.08);
+
+border:
+1px solid rgba(0,255,255,.15);
+
+font-size:.78rem;
+
+font-weight:600;
+
+color:#e9fbff;
+
+backdrop-filter:blur(10px);
+
+transition:.3s ease;
 
 }
 
+.tech-stack span:hover{
+
+transform:translateY(-2px);
+
+background:
+rgba(0,255,255,.16);
+
+}
+
+/* ========================================= */
 /* BUTTONS */
+/* ========================================= */
 
 .project-links{
 
@@ -580,7 +883,7 @@ display:flex;
 
 gap:14px;
 
-padding:0 24px 24px;
+padding:0 24px 26px;
 
 }
 
@@ -588,7 +891,7 @@ padding:0 24px 24px;
 
 flex:1;
 
-padding:12px 18px;
+padding:13px 18px;
 
 border-radius:30px;
 
@@ -596,7 +899,9 @@ text-decoration:none;
 
 text-align:center;
 
-font-weight:600;
+font-weight:700;
+
+font-size:.92rem;
 
 color:white;
 
@@ -606,28 +911,72 @@ transition:.4s ease;
 
 .project-links a:first-child{
 
-background:#00bfff;
+background:
+linear-gradient(
+135deg,
+#00bfff,
+#0077ff
+);
 
 }
 
 .project-links a:last-child{
 
-background:#6d3cff;
+background:
+linear-gradient(
+135deg,
+#7b3dff,
+#5f1fff
+);
 
 }
 
 .project-links a:hover{
 
-transform:translateY(-3px);
+transform:
+translateY(-3px)
+scale(1.02);
 
 box-shadow:
-0 0 18px rgba(0,255,255,.25);
+0 0 18px rgba(0,255,255,.18);
 
 }
 
 /* ========================================= */
-/* FADE */
+/* CARD ANIMATIONS */
 /* ========================================= */
+
+@keyframes cardReveal{
+
+0%{
+opacity:0;
+transform:
+translateY(20px)
+scale(.92);
+}
+
+100%{
+opacity:1;
+transform:
+translateY(0px)
+scale(1);
+}
+
+}
+
+@keyframes fadeTyping{
+
+from{
+opacity:0;
+transform:translateY(8px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
 
 @keyframes fadeIn{
 
@@ -644,7 +993,7 @@ transform:translate(-50%,-50%);
 }
 
 /* ========================================= */
-/* REALISTIC MOON */
+/* MOON */
 /* ========================================= */
 
 .moon-surface{
@@ -661,7 +1010,6 @@ height:1050px;
 border-radius:50%;
 
 background:
-
 radial-gradient(circle at 35% 30%,
 #ffffff 0%,
 #ececec 10%,
@@ -671,7 +1019,6 @@ radial-gradient(circle at 35% 30%,
 #4d4d4d 100%);
 
 box-shadow:
-
 0 0 80px rgba(255,255,255,.18),
 0 0 160px rgba(255,255,255,.08),
 inset -120px -60px 180px rgba(0,0,0,.35),
@@ -681,9 +1028,26 @@ z-index:2;
 
 overflow:hidden;
 
+animation:
+moonFloat 10s ease-in-out infinite;
+
 }
 
-/* MOON TEXTURE */
+@keyframes moonFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
 
 .moon-surface::before{
 
@@ -697,7 +1061,6 @@ height:100%;
 border-radius:50%;
 
 background:
-
 radial-gradient(circle at 18% 28%, rgba(0,0,0,.18) 18px, transparent 20px),
 radial-gradient(circle at 35% 55%, rgba(0,0,0,.20) 32px, transparent 34px),
 radial-gradient(circle at 55% 35%, rgba(0,0,0,.16) 24px, transparent 26px),
@@ -710,8 +1073,6 @@ opacity:.45;
 filter:blur(.2px);
 
 }
-
-/* MOON GLOW */
 
 .moon-surface::after{
 
@@ -747,21 +1108,15 @@ opacity:.8;
 @media(max-width:900px){
 
 .projects-container{
-
 height:850px;
-
 }
 
 .astronaut-card img{
-
 width:130px;
-
 }
 
 .space-card{
-
 width:90vw;
-
 }
 
 }
@@ -769,26 +1124,18 @@ width:90vw;
 @media(max-width:768px){
 
 .section-title{
-
 font-size:2.2rem;
-
 }
 
 .project-tag{
-
 font-size:.8rem;
-
 padding:8px 14px;
-
 }
 
 .moon-surface{
-
 width:1400px;
 height:800px;
-
 bottom:-560px;
-
 }
 
 }
