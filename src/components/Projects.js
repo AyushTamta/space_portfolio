@@ -51,28 +51,52 @@ tech:[
 
 {
 id:2,
-mission:"Titan Analytics",
-title:"Banking Analytics",
+mission:"Portfolio-website",
+title:"Cinematic Space Portfolio",
 image:project2,
-demo:"#",
-github:"#",
-status:"SECURED",
-sector:"Banking Intelligence",
-desc:"Fraud detection and banking analytics platform with intelligent reporting.",
-tech:["Python","SQL","Analytics","Dashboard"]
+
+demo:"https://space-portfolio-seven-rho.vercel.app/",
+
+github:"https://github.com/AyushTamta/space_portfolio",
+
+status:"LIVE",
+
+sector:"developer portfolio",
+
+desc:"Immersive cinematic portfolio experience featuring futuristic space-themed UI, animated astronaut interactions, orbital skill systems, custom cursor mechanics, glassmorphism project cards, dynamic hover animations, and responsive visual storytelling built with modern React architecture.",
+
+tech:[
+"React",
+"JavaScript",
+"CSS3",
+"React Hooks",
+"useState",
+"Responsive Design",
+"Glassmorphism",
+
+]
 },
 
 {
-id:3,
-mission:"Nova Tasks",
-title:"Task Manager",
-image:project3,
-demo:"#",
-github:"#",
-status:"DEPLOYED",
-sector:"Productivity Systems",
-desc:"Full stack productivity platform with authentication and smart dashboards.",
-tech:["React","Node.js","MongoDB","Express"]
+  id:3,
+  mission:"VEYRO AI",
+  title:"AI Client Retention Platform",
+  image:project3,
+  demo:"https://veyro-ad4s.vercel.app/",
+  github:"https://github.com/AyushTamta/veyro",
+  status:"LIVE",
+  sector:"AI SaaS / Fitness Tech",
+  desc:"Premium AI-powered client retention platform for online fitness coaches featuring churn prediction, WhatsApp automation, recovery intelligence, revenue tracking, and smart retention dashboards.",
+  tech:[
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Twilio",
+    "WhatsApp API",
+    "micro-saas",
+    "AI Automation",
+    "JavaScript",
+  ]
 },
 
 {
