@@ -25,15 +25,28 @@ const projects = [
 
 {
 id:1,
-mission:"Mission Aether",
-title:"Portfolio Website",
+mission:"Sensa AI",
+title:"AI Customer Intelligence Platform",
 image:project1,
-demo:"#",
-github:"#",
-status:"ACTIVE",
-sector:"Frontend Systems",
-desc:"React portfolio with cinematic space animations and immersive futuristic UI.",
-tech:["React","CSS","Animations","JavaScript"]
+
+demo:"https://sense-ai-ayushtamtas-projects.vercel.app/",
+
+github:"https://github.com/AyushTamta/sense-ai",
+
+status:"LIVE",
+
+sector:"Artificial Intelligence",
+
+desc:"Enterprise-grade AI customer intelligence platform featuring ML-powered churn prediction, agentic AI workflows, executive intelligence generation, conversational analytics, and predictive business intelligence systems.",
+
+tech:[
+"Next.js",
+"FastAPI",
+"TypeScript",
+"Scikit-learn",
+"Machine Learning",
+"Agentic AI"
+]
 },
 
 {
