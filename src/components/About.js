@@ -169,17 +169,17 @@ Ayush Tamta
 </h2>
 
 <h3>
-Software Developer • Data Analyst • Problem Solver
+Indie Developer • Data Analyst • Software Engineer • Problem Solver
 </h3>
 
 <p>
 
-I am a passionate software developer focused on building
-modern, scalable and intelligent digital experiences.
+I am a passionate and focused on building
+modern, scalable and intelligent digital experiences and understanding business point of tech.
 
 <br/><br/>
 
-With expertise in React, JavaScript, backend technologies,
+With expertise in React, JavaScript, backend technologies, SQL, Python
 banking systems and analytical applications, I enjoy solving
 real-world business problems through elegant solutions.
 
@@ -196,11 +196,13 @@ and evolving.
 <div className="tech-stack">
 
 <span>React</span>
+<span>Next.js</span>
 <span>JavaScript</span>
 <span>Node.js</span>
 <span>Python</span>
 <span>SQL</span>
 <span>AI</span>
+<span>Java</span>
 <span>Data Analysis</span>
 <span>Business Analysis</span>
 <span>Banking Analytics</span>
@@ -221,7 +223,7 @@ and evolving.
 
 <div className="stat-card">
 
-<h4>15+</h4>
+<h4>10+</h4>
 <p>Projects</p>
 
 </div>
