@@ -17,6 +17,7 @@ import project1 from "./project1.png";
 import project2 from "./project2.png";
 import project3 from "./project3.png";
 import project4 from "./project4.png";
+import project5 from "./project5.png";
 
 const Projects = () => {
 
@@ -125,18 +126,26 @@ tech:[
   ]
   },
 
-{
-id:5,
-mission:"Crypto Orbit",
-title:"Crypto Tracker",
-image:project2,
-demo:"#",
-github:"#",
-status:"LIVE",
-sector:"Blockchain Systems",
-desc:"Crypto analytics dashboard with portfolio monitoring and live charts.",
-tech:["React","Charts","API","Crypto"]
-}
+  {
+    id: 5,
+    mission: "Financial Intelligence",
+    title: "RemitGuard Analytics",
+    image: project5,
+    demo: "https://remitguard.streamlit.app/",
+    github: "https://github.com/AyushTamta/RemitGuard_AI",
+    status: "LIVE",
+    sector: "Risk Analytics Systems",
+    desc: "Cross-border transaction intelligence platform focused on remittance risk analysis, compliance monitoring, behavioral anomaly detection, and machine learning driven financial investigation workflows.",
+    tech: [
+      "Python",
+      "Machine Learning",
+      "Risk Analytics",
+      "OCR",
+      "RAG",
+      "Streamlit",
+      "Data analysis"
+    ]
+  }
 
 ]
 
