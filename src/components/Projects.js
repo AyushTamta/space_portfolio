@@ -16,6 +16,7 @@ import astronaut5 from "./astro5.png";
 import project1 from "./project1.png";
 import project2 from "./project2.png";
 import project3 from "./project3.png";
+import project4 from "./project4.png";
 
 const Projects = () => {
 
@@ -100,17 +101,29 @@ tech:[
 },
 
 {
-id:4,
-mission:"Quantum Mind",
-title:"AI Assistant",
-image:project1,
-demo:"#",
-github:"#",
-status:"EXPERIMENTAL",
-sector:"Artificial Intelligence",
-desc:"AI powered conversational assistant with futuristic interactions.",
-tech:["AI","NLP","React","APIs"]
-},
+  id:4,
+  mission:"InvoEase AI",
+  title:"AI Finance Intelligence Platform",
+  image:project4,
+  demo:"https://invoease-ai.vercel.app",
+  github:"https://github.com/AyushTamta/invoease-ai",
+  android:"https://expo.dev/artifacts/eas/kLXFtLgig3cU6zkdp73r5a.aab",
+  status:"DEPLOYED",
+  sector:"AI Financial Technology",
+  desc:"Cross-platform AI-powered finance intelligence platform featuring OCR-based invoice scanning, conversational finance assistance, searchable expense memory, responsive analytics dashboards, and cloud-deployed full-stack architecture across web and mobile.",
+  tech:[
+    "React Native",
+    "Expo",
+    "Expo Web",
+    "FastAPI",
+    "Python",
+    "Supabase",
+    "OCR APIs",
+    "AI Interfaces",
+    "Responsive SaaS UI",
+    "Cloud Deployment"
+  ]
+  },
 
 {
 id:5,
