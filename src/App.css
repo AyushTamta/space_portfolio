@@ -51,6 +51,13 @@ overflow:hidden;
 
 }
 
+.App{
+position:relative;
+isolation:isolate;
+min-height:100vh;
+background:transparent;
+}
+
 /* ========================================= */
 /* GLOBAL SPACE BACKGROUND */
 /* ========================================= */
@@ -75,7 +82,7 @@ center/cover no-repeat;
 
 z-index:-3;
 
-opacity:.22;
+opacity:.72;
 
 animation:
 spaceMove 120s ease-in-out infinite alternate;
@@ -99,17 +106,124 @@ width:100%;
 height:100%;
 
 background:
-linear-gradient(
-180deg,
-rgba(2,4,10,.82),
-rgba(5,8,22,.88),
-rgba(8,12,28,.92)
-);
+radial-gradient(circle at 52% 16%,rgba(35,87,150,.14),transparent 35%),
+linear-gradient(180deg,rgba(2,4,10,.48),rgba(5,8,22,.62) 46%,rgba(3,6,17,.76));
 
 z-index:-2;
 
 pointer-events:none;
 
+}
+
+/* ========================================= */
+/* ONE CONTINUOUS COSMIC SCENE */
+/* ========================================= */
+
+.cosmic-canvas{
+position:fixed;
+inset:0;
+z-index:-1;
+overflow:hidden;
+pointer-events:none;
+background:
+radial-gradient(circle at 12% 24%,rgba(0,217,255,.09) 0 1px,transparent 2px),
+radial-gradient(circle at 82% 36%,rgba(255,255,255,.16) 0 1px,transparent 2px),
+radial-gradient(circle at 44% 78%,rgba(153,111,255,.14) 0 1px,transparent 2px);
+background-size:173px 173px,227px 227px,283px 283px;
+}
+
+.cosmic-canvas::after{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(ellipse at center,transparent 25%,rgba(1,3,12,.46) 100%);
+}
+
+.cosmic-nebula{
+position:absolute;
+width:46vw;
+height:46vw;
+min-width:420px;
+min-height:420px;
+border-radius:50%;
+filter:blur(75px);
+opacity:.22;
+animation:nebulaDrift 26s ease-in-out infinite alternate;
+}
+
+.cosmic-nebula-one{
+top:8%;
+left:-16%;
+background:radial-gradient(circle,#00bde7 0,rgba(19,74,175,.52) 35%,transparent 70%);
+}
+
+.cosmic-nebula-two{
+right:-18%;
+bottom:-8%;
+background:radial-gradient(circle,#8a40d8 0,rgba(36,26,132,.55) 38%,transparent 72%);
+animation-delay:-12s;
+}
+
+.cosmic-horizon{
+position:absolute;
+left:8%;
+right:8%;
+top:52%;
+height:1px;
+background:linear-gradient(90deg,transparent,rgba(88,218,255,.22),transparent);
+box-shadow:0 0 45px 12px rgba(54,150,255,.08);
+transform:rotate(-7deg);
+}
+
+.shooting-star{
+position:absolute;
+width:120px;
+height:1px;
+border-radius:50%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.95));
+filter:drop-shadow(0 0 5px #75eaff);
+opacity:0;
+transform:rotate(-28deg);
+animation:shootAcross 12s ease-in infinite;
+}
+
+.shooting-star-one{top:18%;left:74%;}
+.shooting-star-two{top:54%;left:18%;animation-delay:4.5s;animation-duration:15s;}
+.shooting-star-three{top:78%;left:66%;animation-delay:9s;animation-duration:18s;}
+
+@keyframes nebulaDrift{
+from{transform:translate3d(0,0,0) scale(1);}
+to{transform:translate3d(7vw,5vh,0) scale(1.14);}
+}
+
+@keyframes shootAcross{
+0%,72%{opacity:0;transform:translate3d(0,0,0) rotate(-28deg);}
+74%{opacity:1;}
+81%{opacity:0;transform:translate3d(-38vw,23vw,0) rotate(-28deg);}
+100%{opacity:0;}
+}
+
+/* Section backgrounds stay transparent so the wallpaper never restarts. */
+.about::before,
+.skills-section::before,
+.projects-section::before,
+.extra-curricular::before{
+background:none !important;
+}
+
+.footer{
+background:transparent !important;
+}
+
+.footer::before{
+background:linear-gradient(180deg,rgba(2,4,10,.1),rgba(2,4,10,.74)) !important;
+}
+
+@media(prefers-reduced-motion:reduce){
+.cosmic-nebula,
+.shooting-star,
+body::before{animation:none;}
+.shooting-star{display:none;}
 }
 
 /* ========================================= */

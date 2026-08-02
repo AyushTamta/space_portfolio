@@ -169,7 +169,7 @@ Ayush Tamta
 </h2>
 
 <h3>
-Indie Developer • Data Analyst • Software Engineer • Problem Solver
+Indie Developer • Data Engineer • Software Engineer • Problem Solver
 </h3>
 
 <p>

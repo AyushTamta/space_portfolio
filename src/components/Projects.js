@@ -188,11 +188,17 @@ animationDelay:Math.random()*5+"s"
 
 </div>
 
-{/* TITLE */}
+<header className="projects-heading">
+<div className="projects-heading-copy">
+<h2 className="section-title">Mission Projects</h2>
+</div>
+<div className="mission-index" aria-label="Five deployed projects">
+<strong>05</strong>
+<span>Deployed<br />missions</span>
+</div>
+</header>
 
-<h2 className="section-title">
-Mission Projects
-</h2>
+<div className="distant-planet" aria-hidden="true"></div>
 
 {/* PROJECT AREA */}
 
@@ -205,6 +211,10 @@ projects.map((project,index)=>(
 key={project.id}
 className={`astronaut-card astronaut${index+1}`}
 onMouseEnter={()=>setActiveProject(project)}
+onFocus={()=>setActiveProject(project)}
+tabIndex="0"
+role="button"
+aria-label={`View ${project.mission} project`}
 >
 
 {/* SPOTLIGHT */}
@@ -223,8 +233,11 @@ alt=""
 />
 
 <div className="project-tag">
-{project.mission}
+<span>Mission 0{index+1}</span>
+<strong>{project.mission}</strong>
 </div>
+
+<span className="mission-beacon" aria-hidden="true"></span>
 
 </div>
 
@@ -320,7 +333,8 @@ Github
 
 {/* MOON */}
 
-<div className="moon-surface"></div>
+<div className="moon-atmosphere" aria-hidden="true"></div>
+<div className="moon-surface" aria-hidden="true"></div>
 
 </section>
 

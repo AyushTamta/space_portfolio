@@ -5,7 +5,7 @@
 .projects-section{
 
 width:100%;
-min-height:100vh;
+min-height:1050px;
 
 position:relative;
 
@@ -16,10 +16,23 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 
-padding:100px 20px;
+padding:130px 20px 0;
 
 color:white;
 
+}
+
+.projects-subtitle{
+position:absolute;
+top:100px;
+left:50%;
+width:min(620px,calc(100% - 40px));
+transform:translateX(-50%);
+z-index:5;
+color:rgba(220,235,255,.58);
+font-size:.92rem;
+line-height:1.6;
+text-align:center;
 }
 
 /* ========================================= */
@@ -243,7 +256,7 @@ transform:translateX(140vw);
 /* TITLE */
 /* ========================================= */
 
-.section-title{
+.projects-section .section-title{
 
 position:absolute;
 
@@ -274,7 +287,7 @@ position:relative;
 width:100%;
 max-width:1500px;
 
-height:75vh;
+height:790px;
 
 z-index:3;
 
@@ -298,8 +311,33 @@ cursor:pointer;
 
 z-index:5;
 
-transition:.5s ease;
+transition:filter .35s ease;
 
+outline:none;
+
+}
+
+.astronaut-card::after{
+content:"";
+position:absolute;
+left:50%;
+bottom:20px;
+width:105px;
+height:20px;
+transform:translateX(-50%);
+border-radius:50%;
+background:radial-gradient(ellipse,rgba(3,9,18,.58),transparent 68%);
+filter:blur(6px);
+opacity:.52;
+transition:opacity .35s ease,transform .35s ease,filter .35s ease;
+z-index:0;
+}
+
+.astronaut-card:hover::after,
+.astronaut-card:focus-visible::after{
+opacity:.25;
+filter:blur(10px);
+transform:translateX(-50%) scale(.74);
 }
 
 /* ========================================= */
@@ -310,19 +348,14 @@ transition:.5s ease;
 
 position:absolute;
 
-width:180px;
-height:180px;
+width:210px;
+height:250px;
 
-background:
-radial-gradient(
-circle,
-rgba(0,255,255,.18),
-transparent 70%
-);
+background:radial-gradient(ellipse,rgba(0,225,255,.18),rgba(34,104,255,.06) 45%,transparent 72%);
 
 border-radius:50%;
 
-filter:blur(25px);
+filter:blur(22px);
 
 opacity:0;
 
@@ -340,17 +373,19 @@ transform:scale(1.2);
 
 }
 
+.astronaut-card:focus-visible .spotlight{opacity:1;transform:scale(1.12)}
+
 /* ========================================= */
 /* ASTRONAUT IMAGE */
 /* ========================================= */
 
 .astronaut-card img{
 
-width:185px;
+width:172px;
 
 margin-bottom:-8px;
 
-transition:.5s ease;
+transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease;
 
 filter:
 drop-shadow(0 0 18px rgba(0,255,255,.28));
@@ -359,8 +394,7 @@ position:relative;
 
 z-index:2;
 
-animation:
-astronautBreath 4s ease-in-out infinite;
+animation:astronautBreath 4.8s ease-in-out infinite;
 
 }
 
@@ -383,13 +417,16 @@ transform:scale(1);
 .astronaut-card:hover img{
 
 transform:
-scale(1.1)
-rotate(-5deg);
+translateY(-14px)
+scale(1.07)
+rotate(-3deg);
 
 filter:
 drop-shadow(0 0 35px rgba(0,255,255,.55));
 
 }
+
+.astronaut-card:focus-visible img{transform:translateY(-14px) scale(1.07);filter:drop-shadow(0 0 35px rgba(0,255,255,.55))}
 
 /* ========================================= */
 /* PROJECT TAG */
@@ -397,7 +434,8 @@ drop-shadow(0 0 35px rgba(0,255,255,.55));
 
 .project-tag{
 
-padding:8px 18px;
+min-width:136px;
+padding:8px 15px 9px;
 
 border-radius:30px;
 
@@ -409,7 +447,7 @@ backdrop-filter:blur(12px);
 border:
 1px solid rgba(255,255,255,.08);
 
-font-size:.88rem;
+font-size:.82rem;
 
 font-weight:600;
 
@@ -428,6 +466,18 @@ z-index:1;
 
 }
 
+.project-tag span{
+display:block;
+margin-bottom:3px;
+color:#69e6ff;
+font-size:.54rem;
+font-weight:800;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+.project-tag strong{font-size:.82rem;font-weight:650}
+
 .astronaut-card:hover .project-tag{
 
 background:
@@ -438,58 +488,65 @@ translateY(-2px);
 
 }
 
+.astronaut-card:focus-visible .project-tag{border-color:rgba(0,255,255,.32);background:rgba(0,255,255,.12);transform:translateY(-2px)}
+
 /* ========================================= */
 /* POSITIONS */
 /* ========================================= */
 
 .astronaut1{
 
-top:6%;
-left:5%;
+top:11%;
+left:7%;
 
 animation:
-orbitOne 18s ease-in-out infinite;
+missionFloat 8s ease-in-out infinite;
 
 }
 
 .astronaut2{
 
-top:14%;
-right:6%;
+top:13%;
+right:8%;
 
 animation:
-orbitTwo 20s ease-in-out infinite;
+missionFloat 9s ease-in-out -2s infinite;
 
 }
 
 .astronaut3{
 
-bottom:18%;
-left:18%;
+bottom:24%;
+left:20%;
 
 animation:
-orbitThree 17s ease-in-out infinite;
+missionFloat 7.5s ease-in-out -4s infinite;
 
 }
 
 .astronaut4{
 
-top:42%;
-left:42%;
+top:34%;
+left:43%;
 
 animation:
-orbitFour 22s ease-in-out infinite;
+missionFloat 10s ease-in-out -6s infinite;
 
 }
 
 .astronaut5{
 
-bottom:22%;
-right:14%;
+bottom:21%;
+right:18%;
 
 animation:
-orbitFive 19s ease-in-out infinite;
+missionFloat 8.5s ease-in-out -3s infinite;
 
+}
+
+@keyframes missionFloat{
+0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}
+50%{transform:translate3d(10px,-18px,0) rotate(1.5deg)}
 }
 
 /* ========================================= */
@@ -558,11 +615,11 @@ orbitFive 19s ease-in-out infinite;
 .space-card-overlay{
 
 position:absolute;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 20px 70px;
 
 z-index:20;
 
@@ -570,13 +627,16 @@ animation:fadeIn .35s ease;
 
 pointer-events:none;
 
+background:radial-gradient(circle at center,rgba(3,9,24,.48),transparent 58%);
+
 }
 
 /* CARD */
 
 .space-card{
 
-width:430px;
+width:min(450px,92vw);
+max-height:790px;
 
 position:relative;
 
@@ -590,7 +650,7 @@ backdrop-filter:blur(22px);
 border:
 1px solid rgba(255,255,255,.08);
 
-border-radius:28px;
+border-radius:24px;
 
 box-shadow:
 0 0 35px rgba(0,255,255,.12),
@@ -982,14 +1042,26 @@ transform:translateY(0);
 
 from{
 opacity:0;
-transform:translate(-50%,-45%);
 }
 
 to{
 opacity:1;
-transform:translate(-50%,-50%);
 }
 
+}
+
+.moon-atmosphere{
+position:absolute;
+left:50%;
+bottom:105px;
+width:min(1500px,125vw);
+height:210px;
+transform:translateX(-50%);
+border-radius:50%;
+background:radial-gradient(ellipse,rgba(182,224,255,.16),rgba(74,125,190,.06) 42%,transparent 72%);
+filter:blur(30px);
+z-index:1;
+pointer-events:none;
 }
 
 /* ========================================= */
@@ -1000,12 +1072,14 @@ transform:translate(-50%,-50%);
 
 position:absolute;
 
-bottom:-760px;
+bottom:-610px;
 
-left:-18%;
+left:50%;
 
-width:2100px;
-height:1050px;
+width:min(1900px,145vw);
+height:920px;
+
+transform:translateX(-50%);
 
 border-radius:50%;
 
@@ -1028,23 +1102,22 @@ z-index:2;
 
 overflow:hidden;
 
-animation:
-moonFloat 10s ease-in-out infinite;
+animation:moonFloat 12s ease-in-out infinite;
 
 }
 
 @keyframes moonFloat{
 
 0%{
-transform:translateY(0px);
+transform:translateX(-50%) translateY(0);
 }
 
 50%{
-transform:translateY(-12px);
+transform:translateX(-50%) translateY(-9px);
 }
 
 100%{
-transform:translateY(0px);
+transform:translateX(-50%) translateY(0);
 }
 
 }
@@ -1088,12 +1161,7 @@ height:110%;
 
 border-radius:50%;
 
-background:
-radial-gradient(
-circle,
-rgba(255,255,255,.12),
-transparent 70%
-);
+background:linear-gradient(180deg,rgba(255,255,255,.2),transparent 22%),radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);
 
 filter:blur(35px);
 
@@ -1127,15 +1195,259 @@ width:90vw;
 font-size:2.2rem;
 }
 
+/* ========================================= */
+/* CINEMATIC MISSION LINEUP */
+/* ========================================= */
+
+.projects-section{
+min-height:1080px;
+justify-content:flex-start;
+padding-top:105px;
+background:linear-gradient(180deg,transparent 0%,rgba(4,11,28,.16) 42%,rgba(3,8,20,.42) 100%);
+}
+
+.projects-heading{
+position:relative;
+z-index:7;
+width:min(1180px,100%);
+margin:0 auto 10px;
+padding:0 24px 24px;
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+border-bottom:1px solid rgba(133,211,255,.13);
+}
+
+.projects-heading-copy p{
+margin:0 0 9px;
+color:#69e6ff;
+font-size:.72rem;
+font-weight:800;
+letter-spacing:.2em;
+text-transform:uppercase;
+}
+
+.projects-section .section-title{
+position:static;
+margin:0;
+font-size:clamp(2.4rem,5vw,4rem);
+line-height:1;
+letter-spacing:-.045em;
+text-shadow:0 0 30px rgba(0,217,255,.15);
+}
+
+.projects-heading-copy>span{
+display:block;
+max-width:650px;
+margin-top:13px;
+color:rgba(219,234,255,.58);
+font-size:.94rem;
+line-height:1.6;
+}
+
+.mission-index{
+display:flex;
+align-items:center;
+gap:13px;
+padding:10px 0 5px 24px;
+}
+.mission-index strong{
+color:#fff;
+font-size:2.6rem;
+font-weight:300;
+line-height:1;
+letter-spacing:-.06em;
+}
+.mission-index span{
+color:rgba(185,221,241,.48);
+font-size:.62rem;
+font-weight:700;
+line-height:1.35;
+letter-spacing:.12em;
+text-transform:uppercase;
+}
+
+.projects-subtitle{display:none}
+
+.projects-container{
+height:745px;
+max-width:1480px;
+overflow:visible;
+}
+
+.astronaut-card{
+top:auto;
+bottom:230px;
+width:190px;
+animation:missionHover 7s ease-in-out infinite;
+}
+.astronaut1{left:2%;bottom:248px;animation-delay:0s}
+.astronaut2{left:21%;bottom:320px;right:auto;animation-delay:-1.5s}
+.astronaut3{left:40%;bottom:238px;animation-delay:-3s}
+.astronaut4{left:59%;bottom:315px;top:auto;animation-delay:-4.5s}
+.astronaut5{left:78%;bottom:242px;right:auto;animation-delay:-6s}
+
+@keyframes missionHover{
+0%,100%{transform:translateY(0) rotate(-.8deg)}
+50%{transform:translateY(-10px) rotate(.8deg)}
+}
+
+.astronaut-card img{
+width:205px;
+margin-bottom:-2px;
+filter:drop-shadow(0 14px 18px rgba(0,0,0,.42)) drop-shadow(0 0 18px rgba(63,203,255,.2));
+}
+
+.astronaut-card::before{
+content:"";
+position:absolute;
+left:50%;
+bottom:20px;
+width:1px;
+height:120px;
+transform:translate(-50%,100%);
+background:linear-gradient(180deg,rgba(99,225,255,.26),transparent);
+opacity:.2;
+transition:height .4s ease,opacity .4s ease;
+}
+.astronaut-card:hover::before,.astronaut-card:focus-visible::before{height:150px;opacity:.55}
+
+.project-tag{
+width:168px;
+min-width:0;
+padding:10px 14px 11px;
+border-color:rgba(126,218,255,.16);
+border-radius:14px;
+background:linear-gradient(145deg,rgba(12,27,51,.84),rgba(4,11,27,.72));
+box-shadow:inset 0 1px rgba(255,255,255,.05),0 12px 30px rgba(0,0,0,.24);
+text-align:left;
+}
+.project-tag strong{
+display:block;
+overflow:hidden;
+font-size:.78rem;
+letter-spacing:.01em;
+text-overflow:ellipsis;
+white-space:nowrap;
+}
+
+.mission-beacon{
+position:absolute;
+left:50%;
+bottom:-12px;
+width:7px;
+height:7px;
+transform:translateX(-50%);
+border-radius:50%;
+background:#63e8ff;
+box-shadow:0 0 0 5px rgba(99,232,255,.08),0 0 16px rgba(99,232,255,.8);
+opacity:.65;
+transition:transform .35s ease,opacity .35s ease;
+}
+.astronaut-card:hover .mission-beacon,.astronaut-card:focus-visible .mission-beacon{opacity:1;transform:translateX(-50%) scale(1.3)}
+
+.spotlight{
+top:15%;
+width:240px;
+height:320px;
+background:radial-gradient(ellipse,rgba(27,199,255,.2),rgba(51,105,255,.07) 42%,transparent 72%);
+}
+
+.moon-atmosphere{
+bottom:170px;
+width:min(1750px,145vw);
+height:280px;
+opacity:.9;
+}
+
+.moon-surface{
+bottom:-430px;
+width:min(1850px,140vw);
+height:850px;
+background:radial-gradient(circle at 38% 18%,#f7fbff 0%,#dde5ec 12%,#b8c0c8 28%,#858d97 49%,#505864 70%,#252c37 100%);
+box-shadow:0 -2px 0 rgba(222,247,255,.52),0 -15px 55px rgba(158,221,255,.2),0 0 130px rgba(255,255,255,.08),inset -140px -70px 190px rgba(0,0,0,.42),inset 100px 30px 130px rgba(255,255,255,.16);
+}
+
+.moon-surface::before{
+background:
+radial-gradient(circle at 12% 22%,rgba(18,26,38,.28) 0 24px,rgba(255,255,255,.07) 26px,transparent 31px),
+radial-gradient(circle at 26% 45%,rgba(14,23,34,.24) 0 42px,rgba(255,255,255,.05) 44px,transparent 51px),
+radial-gradient(circle at 45% 18%,rgba(20,28,39,.2) 0 28px,transparent 34px),
+radial-gradient(circle at 61% 48%,rgba(11,18,29,.3) 0 50px,rgba(255,255,255,.05) 52px,transparent 59px),
+radial-gradient(circle at 76% 25%,rgba(18,24,36,.25) 0 31px,transparent 38px),
+radial-gradient(circle at 88% 53%,rgba(13,20,31,.28) 0 38px,transparent 45px),
+radial-gradient(circle at 34% 70%,rgba(8,15,24,.24) 0 32px,transparent 40px);
+opacity:.62;
+}
+
+.distant-planet{
+position:absolute;
+z-index:1;
+top:215px;
+right:5%;
+width:118px;
+height:118px;
+border-radius:50%;
+background:radial-gradient(circle at 32% 26%,#bfeaff,#477bb5 32%,#172f56 68%,#07111f 100%);
+box-shadow:-18px 8px 35px rgba(61,166,255,.16),inset -24px -10px 32px rgba(0,0,0,.48);
+opacity:.52;
+}
+.distant-planet::after{
+content:"";
+position:absolute;
+left:-35%;
+top:47%;
+width:170%;
+height:20%;
+border:2px solid rgba(163,219,255,.32);
+border-left-color:transparent;
+border-right-color:transparent;
+border-radius:50%;
+transform:rotate(-14deg);
+}
+
+.space-card-overlay{
+background:radial-gradient(circle at center,rgba(2,8,21,.76),rgba(2,7,18,.28) 48%,transparent 72%);
+backdrop-filter:blur(3px);
+}
+.space-card{
+border-color:rgba(110,220,255,.18);
+box-shadow:0 0 0 1px rgba(255,255,255,.025),0 30px 100px rgba(0,0,0,.62),0 0 50px rgba(0,204,255,.1);
+}
+
+@media(max-width:1050px){
+.astronaut-card{width:160px}.astronaut-card img{width:165px}.project-tag{width:145px}
+.astronaut1{left:0}.astronaut2{left:20%}.astronaut3{left:40%}.astronaut4{left:60%}.astronaut5{left:80%}
+}
+
+@media(max-width:760px){
+.projects-section{min-height:1320px;padding:80px 16px 0}
+.projects-heading{padding:0 4px 20px;align-items:flex-start}
+.mission-index{display:none}
+.projects-heading-copy>span{font-size:.84rem}
+.projects-container{height:1060px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:18px;padding-top:40px;overflow:visible}
+.astronaut-card,.astronaut1,.astronaut2,.astronaut3,.astronaut4,.astronaut5{position:relative;inset:auto;width:100%;height:285px;animation:missionHover 8s ease-in-out infinite}
+.astronaut-card:nth-child(5){grid-column:1/-1;width:50%;justify-self:center}
+.astronaut-card img{width:145px}.project-tag{width:140px}
+.astronaut-card::before{height:65px}.astronaut-card:hover::before{height:85px}
+.moon-surface{bottom:-300px;width:1100px;height:620px}
+.moon-atmosphere{bottom:190px;width:1000px}
+.distant-planet{top:205px;right:-28px;width:82px;height:82px}
+.space-card-overlay{position:fixed;padding:80px 14px 30px;z-index:2000}
+.space-card{max-height:82vh;overflow-y:auto}
+}
+
 .project-tag{
 font-size:.8rem;
 padding:8px 14px;
 }
 
 .moon-surface{
-width:1400px;
-height:800px;
-bottom:-560px;
+width:1350px;
+height:760px;
+bottom:-500px;
 }
+
+.astronaut1{left:2%}.astronaut2{right:2%}.astronaut3{left:10%}.astronaut5{right:8%}
 
 }
